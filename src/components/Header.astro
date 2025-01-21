@@ -1,0 +1,22 @@
+---
+import Social from "../components/Social.astro"
+---
+
+<header class="xs:justify-start xs:p-1 flex justify-around lg:justify-evenly items-center min-h-16 relative">
+    <Social />
+    <div class="flex items-center">
+        <img src="/icons/frontend.png" alt="frontend icon png">
+        <a href="#" class="xs:text-xl sm:text-2xl lg:text-3xl text-white text-2xl">Seba.</a>
+    </div>
+    <nav class="xs:hidden lg:flex w-[420px] flex justify-around text-[#ABB2BF]">
+        <li class="list-none"><a href="/" class="text-white"><span class="text-[#C778DD] mr-0.5">#</span>Inicio</a></li>
+        <li class="list-none"><a href="#proyectos"><span class="text-[#C778DD] mr-0.5">#</span>Proyectos</a></li>
+        <li class="list-none"><a href="#habilidades"><span class="text-[#C778DD] mr-0.5">#</span>Habilidades</a></li>
+        <li class="list-none"><a href="#sobremi"><span class="text-[#C778DD] mr-0.5">#</span>Sobre Mí</a></li>
+        <li class="list-none"><a href="#contacto"><span class="text-[#C778DD] mr-0.5">#</span>Contacto</a></li>
+    </nav>
+    <a href="src/Sebastián Orellana CV.pdf" download="SebastianOrellanaCV.pdf" class="absolute lg:text-xs md:p-2 xs:p-1 lg:right-2 lg:p-1 right-6 flex items-center bg-[#C778DD] border-[1px] border-black cursor-pointer shadow-sm shadow-slate-950">
+        <img class="xs:w-5 sm:w-7 lg:w-6" src="/icons/document.png" alt="">
+        Descargar CV
+    </a>
+</header>

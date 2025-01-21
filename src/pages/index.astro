@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+const frasesMotivacionales = [
+    { frase: "El único modo de hacer un gran trabajo es amar lo que haces.", autor: "Steve Jobs" },
+    { frase: "El éxito no es la clave de la felicidad. La felicidad es la clave del éxito.", autor: "Albert Schweitzer" },
+    { frase: "No cuentes los días, haz que los días cuenten.", autor: "Muhammad Ali" },
+    { frase: "El fracaso es una gran oportunidad para empezar otra vez con más inteligencia.", autor: "Henry Ford" },
+    { frase: "La mejor manera de predecir el futuro es crearlo.", autor: "Peter Drucker" },
+    { frase: "No importa lo lento que vayas, siempre y cuando no te detengas.", autor: "Confucio" },
+    { frase: "La vida es 10% lo que me ocurre y 90% cómo reacciono a ello.", autor: "Charles Swindoll" },
+    { frase: "El éxito es la suma de pequeños esfuerzos repetidos día tras día.", autor: "Robert Collier" },
+    { frase: "La única forma de hacer un gran trabajo es amar lo que haces.", autor: "Steve Jobs" },
+    { frase: "No dejes que el miedo a perder sea mayor que la emoción de ganar.", autor: "Robert Kiyosaki" }
+];
+
+const fraseRandom = frasesMotivacionales[Math.floor(Math.random() * frasesMotivacionales.length)];
+---
+
+<Layout title="Inicio">
+    <main class="min-h-96 w-[80%] mx-auto mt-2 flex justify-around items-center overflow-x-hidden xl:w-[60%]">
+        <section class="flex w-[80%] justify-center items-center flex-col sm:items-start lg:items-start xl:w-[80%]">
+            <img class="xs:w-36 sm:hidden w-72 rounded-full border-solid border-b-4 border-b-[#C778DD] shadow-slate-950" src="/images/perfil.png" alt="">
+            <img src="/images/square.svg" class="xs:hidden sm:w-24 xl:w-52 xl:left-[-4rem] sm:block absolute w-40 h-40 rotate-180 left-[-3rem] rounded-sm" alt="">
+            <h1 class="xs:text-center xs:text-3xl sm:text-4xl lg:text-5xl">Sebastián Orellana</h1>
+            <span class="xs:text-center xs:text-2xl sm:text-3xl text-[#C778DD]">Full-Stack Developer</span>
+            <hr class="my-2 w-[100%] lg:w-[50%] xl:w-[50%]">
+            <p class=" text-[#ABB2BF] lg:w-[60%] xl:w-[60%]">Especializado en Frontend. Diseño interfaces dinámicas y optimizadas, conectadas a soluciones backend con Node.js</p>
+            <button class="xs:w-36 lg:w-72 mt-2 border-solid border-2 p-1 w-72 border-[#C778DD] ">Contacto</button>
+        </section>
+        <section class="bg-[url('/images/glitch1.png')] rounded-full">
+            <img class="xs:hidden sm:block sm:w-72 rounded-full border-solid border-b-4 border-b-[#C778DD] shadow-slate-950" src="/images/perfil.png" alt="">
+        </section>
+    </main>
+
+    <section class="flex w-[80%] h-72 mt-5 mx-auto justify-center items-center flex-col">
+        <fieldset class="xs:w-50 sm:w-[550px] p-1 h-36 border-[1px] border-[#ABB2BF] mx-auto">
+            <legend><img class="xs:w-6 ms:w-12 lg:w-16" src="/icons/quote.png" alt="quote icon"></legend>
+            <p class="xs:text-lg sm:text-2xl text-center">{fraseRandom.frase}</p>
+        </fieldset>
+        <fieldset class="xs:w-44 sm:w-52 p-1 xs:h-16 sm:h-24 mt-2 border-[1px] border-[#ABB2BF]">
+            <legend><img class="xs:w-6 sm:w-6 lg:w-12" src="/icons/quote.png" alt="quote icon"></legend>
+            <p class="xs:text-sm sm:text-xl text-center">- {fraseRandom.autor}</p>
+        </fieldset>
+    </section>
+
+    <section id="proyectos" class="w-[100%] min-h-96 mx-auto mt-10 relative overflow-x-hidden">
+        <div class="flex items-center relative w-[90%] mx-auto">
+            <p class="xs:text-xl sm:text-3xl lg:text-4xl"><span class="text-[#C778DD]">#</span>Proyectos</p>
+            <div class="xs:w-[20%] sm:w-[30%] h-[1px] xs:ml-2 sm:ml-4 bg-[#C778DD] opacity-90"></div>
+            <a class="hidden absolute items-center xs:right-4 right-2" href="">Ver más <img class="xs:w-5 lg:w-12 w-7 ml-1" src="/icons/arrow.png" alt=""></a>
+        </div>
+        <article class="flex justify-evenly items-start mt-5 min-h-72 w-[80%] mx-auto p-1 flex-wrap">
+            <img src="/images/lines.svg" class="absolute xs:w-12 sm:w-24 lg:w-36 w-36 min-h-72 left-[-20px]" alt="">
+            <ProjectCard />
+            <img src="/images/shape2.svg" class="absolute xs:w-20 w-36 h-28 xs:hidden sm:block sm:right-[-1rem] right-[-3rem] rotate-90" alt="">
+        </article>
+    </section>
+
+    <section id="habilidades" class="w-[100%] min-h-96 mx-auto mt-10 relative overflow-x-hidden">
+        <div class="flex items-center relative w-[90%] mx-auto">
+            <p class="xs:text-xl sm:text-3xl text-3xl"><span class="text-[#C778DD]">#</span>Habilidades</p>
+            <div class="xs:w-[20%] w-[30%] h-[1px] ml-4 bg-[#C778DD] opacity-90"></div>
+        </div>
+        <article class="flex justify-evenly items-start mt-5 min-h-72 w-[80%] mx-auto p-1 flex-wrap">
+            <div class="flex flex-col items-start border-[1px] border-[#ABB2BF] p-2">
+                <span class="xs:text-xl text-2xl">Técnicas</span>
+                <div class="w-52 border-[1px] border-[#ABB2BF] p-2">
+                    <ul class="text-[#ABB2BF]">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Tailwind</li>
+                        <li>NodeJS</li>
+                        <li>ExpressJS</li>
+                        <li>EJS</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col items-start border-[1px] border-[#ABB2BF] p-2 xs:mt-5">
+                <span class="text-2xl">Blandas</span>
+                <div class="w-52 border-[1px] border-[#ABB2BF] p-2">
+                    <ul class="text-[#ABB2BF]">
+                        <li>Resolución de problemas</li>
+                        <li>trabajo en equipo</li>
+                        <li>capacidad analítica</li>
+                        <li>comunicación</li>
+                        <li>aprendizaje continuo</li>
+                    </ul>
+                </div>
+            </div>
+            <img src="/images/dots.svg" class="absolute w-36 h-36 right-[-15px] rotate-45 xs:w-12 xs:right-[-25px] lg:w-28" alt="">
+        </article>
+    </section>
+
+    <section id="sobremi" class="w-[100%] min-h-96 mx-auto mt-10 overflow-x-hidden relative">
+        <div class="flex items-center relative w-[90%] mx-auto">
+            <p class="xs:text-2xl sm:text-3xl"><span class="text-[#C778DD]">#</span>Sobre Mí</p>
+            <div class="xs:w-[20%] w-[30%] h-[1px] ml-4 bg-[#C778DD] opacity-90"></div>
+        </div>
+        <article class="flex justify-start items-start mt-5 min-h-72 xs:w-[100%] xs:p-2 sm:w-[80%] lg:w-[50%] w-[60%] mx-auto p-1 flex-wrap">
+            <p class="xs:text-lg text-2xl text-[#ABB2BF] lg:text-2xl">22 años. Desarrollador web orientado al aprendizaje continuo,
+                con conocimientos en frontend (HTML, CSS, React) y backend
+                (Node.js, Express).
+            </p>
+            <p class="xs:text-lg text-2xl text-[#ABB2BF] lg:text-2xl">Destaco por mi capacidad de resolver
+                problemas, adaptarme rápidamente a nuevas tecnologías y
+                colaborar eficazmente en equipo. Mi objetivo es contribuir al
+                éxito de proyectos digitales mientras avanzo en mi carrera IT.</p>
+        </article>
+        <img src="/images/shape2.svg" class="absolute top-24 left-[-10px] w-32 xs:w-14 xs:hidden lg:block" alt="">
+    </section>
+
+    <section id="contacto" class="w-[100%] min-h-80 mx-auto mt-10 relative overflow-x-hidden">
+        <div class="flex items-center relative w-[90%] mx-auto">
+            <p class="xs:text-2xl sm:text-3xl text-3xl lg:text-4xl"><span class="text-[#C778DD]">#</span>Contacto</p>
+            <div class="xs:w-[20%] w-[30%] h-[1px] ml-4 bg-[#C778DD] opacity-90"></div>
+        </div>
+        <article class="flex justify-around items-start mt-5 min-h-72 xs:w-[100%] lg:w-[80%] xl:w-[100%] xs:p-2 w-[80%] mx-auto p-1 flex-wrap">
+            <div class="flex items-center justify-around xs:flex-col xl:flex-row">
+                <p class="xs:text-center xs:text-lg text-[#ABB2BF] text-2xl lg:text-2xl">Propuestas laborales y colaboraciones en proyectos</p>
+                <img class="xs:w-10 xs:mt-2 xs:rotate-90 ml-2 xl:rotate-0 xl:w-20" src="/icons/arrow.png" alt="">
+            </div>
+            <div class="flex flex-col border-[1px] p-2 border-[#ABB2BF] items-start">
+                <div class="flex items-center justify-around">
+                    <img src="/images/gmail.png" class="xs:w-10 lg:w-12" alt="">
+                    <p class="xs:text-sm ml-1 lg:text-base text-[#ABB2BF]">orellanasebastian15@gmail.com</p>
+                </div>
+                <div class="flex items-center mt-2">
+                    <img src="/images/wsp.png" class="xs:w-10 lg:w-12" alt="">
+                    <a href="https://wa.me/+5491128172947" class="underline xs:text-sm ml-1 lg:text-base text-[#ABB2BF]">+54 9 1128172947</a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+</Layout>

@@ -1,0 +1,57 @@
+---
+const proyectos = [
+    {
+        titulo: "S&E Consultora",
+        descripcion: "Diseño y desarrollo de un sitio web de manera freelance para un cliente del sector inmobiliario.",
+        portada: "/images/sye.jpg",
+        tecnologias: ["HTML, CSS, JavaScript"],
+        link: "",
+        repo: "https://github.com/orellanaseba/syeconsultora",
+    },
+    {
+        titulo: "Inventory-Express",
+        descripcion: "Gestión de inventario. Incluye creación, edición y eliminación de productos. Validación y autenticación de usuarios.",
+        portada: "/images/inventory.jpg",
+        tecnologias: ["ExpressJS, CSS, EJS, PostgreSQL"],
+        link: "",
+        repo: "https://github.com/orellanaseba/inventory-express",
+    },
+    {
+        titulo: "MembersOnly",
+        descripcion: "Red social sencilla con creación de usuarios, publicaciones y permisos admin/usuario. Validación y autenticación mediante PassportJS y PgSession.",
+        portada: "/images/only.jpg",
+        tecnologias: ["ExpressJS, CSS, EJS, PostgreSQL, PassportJS, PgSession"],
+        link: "https://membersonly-production-4ebe.up.railway.app/", 
+        repo: "https://github.com/orellanaseba/membersOnly",
+    }
+]
+---
+
+{proyectos && proyectos.map(proyecto => {
+    return (
+    <article class="flex items-start flex-col xs:mt-5 min-w-72">
+        <div class="xs:w-60 sm:w-80 w-72 border-[1px] border-[#ABB2BF] border-b-0">
+            <img src={proyecto.portada} alt="">
+        </div>
+        <div class="xs:w-60 sm:w-80 flex items-center justify-start p-2 border-[1px] border-b-0 border-[#ABB2BF] w-72">
+            <span class="text-[#ABB2BF] text-sm">{proyecto.tecnologias}</span>
+        </div>
+        <div class="xs:w-60 sm:w-80 p-2 flex items-center justify-start border-[1px] border-b-0 border-[#ABB2BF] w-72">
+            <a href="#" class="text-xl">{proyecto.titulo}</a>
+        </div>
+
+        <div class="xs:w-60 sm:w-80 w-72 border-[1px] p-2 border-[#ABB2BF]">
+            <p class="text-[#ABB2BF]">{proyecto.descripcion}</p>
+            <div class="flex justify-start p-1 items-center w-50">
+                {!proyecto.link ? (
+                    <a href={proyecto.repo} class="bg-[#C778DD] border-[1px] border-[#ABB2BF] w-36 text-center">Código</a>
+
+                ) : <a href={proyecto.repo} class="border-[1px] bg-[#C778DD] border-[#ABB2BF] w-36 text-center">Código</a> }
+                {proyecto.link && (
+                    <a href={proyecto.link} class="bg-[#C778DD] ml-1 border-[1px] text-center border-[#ABB2BF] w-36">Ver en vivo</a>
+                )}
+            </div>
+        </div>
+    </article>
+    )
+})}
